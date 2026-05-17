@@ -1,0 +1,22 @@
+ <!doctype html>
+ <html>
+ 
+ <body> 
+ <form ...etc...  onsubmit="return
+ validateFileExtension(this.fileField)"> 
+ <p> <input name="fileField">
+ <input type="file" onchange="return validateFileExtension(this)"> </p> </form> 
+
+<script type="text/javascript">
+
+ function validateFileExtension(fld) {
+    if(!/(\.bmp|\.gif|\.jpg|\.jpeg)$/i.test(fld.value)) {
+        alert("Invalid image file type.");      
+        fld.form.reset();
+        fld.focus();        
+        //return false;   
+    }   
+    return true; 
+ } </script>
+ </body>
+ </html>
